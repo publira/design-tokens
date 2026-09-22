@@ -1,0 +1,59 @@
+{
+  "name": "@publira/design-tokens",
+  "version": "1.0.0",
+  "description": "Shared design tokens for Publira's web projects, as Tailwind CSS v4 theme variables.",
+  "keywords": [
+    "design-tokens",
+    "publira",
+    "tailwindcss"
+  ],
+  "homepage": "https://github.com/publira/design-tokens#readme",
+  "bugs": "https://github.com/publira/design-tokens/issues",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/publira/design-tokens.git"
+  },
+  "files": [
+    "dist",
+    "tokens"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./theme.css": "./dist/theme.css",
+    "./tokens/*.tokens.json": "./tokens/*.tokens.json",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "style-dictionary build --config style-dictionary.config.js",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "prepack": "pnpm run build",
+    "test": "pnpm run build && node --test"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "eslint-plugin-github": "6.1.2",
+    "eslint-plugin-sonarjs": "4.2.1",
+    "lefthook": "2.1.14",
+    "oxfmt": "0.68.0",
+    "oxlint": "1.83.0",
+    "style-dictionary": "5.5.5",
+    "tailwindcss": "4.3.3",
+    "ultracite": "7.12.0"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^4.0.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.21.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.5.1"
+}

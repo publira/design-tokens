@@ -1,0 +1,21 @@
+{
+  "name": "Publira Design Tokens",
+  "image": "ghcr.io/publira/base-images/publira-dev:2026.09.22@sha256:533228ab57097b3c303331bee10e126bd9c57880b0dd08b3914c4c1471969b9f",
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0.5": {},
+    "ghcr.io/devcontainers/features/github-cli:1.1.2": {}
+  },
+  "mounts": [
+    "source=epub-web-claude-${devcontainerId},target=/home/vscode/.claude,type=volume",
+    "source=epub-web-codex-${devcontainerId},target=/home/vscode/.codex,type=volume",
+    "source=epub-web-gemini-${devcontainerId},target=/home/vscode/.gemini,type=volume",
+    "source=epub-web-gh-${devcontainerId},target=/home/vscode/.config/gh,type=volume",
+    "source=epub-web-grok-${devcontainerId},target=/home/vscode/.grok,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": ["tailwindcss.tailwindcss", "oxc.oxc-vscode"]
+    }
+  },
+  "postCreateCommand": ".devcontainer/post-create.sh"
+}

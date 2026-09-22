@@ -1,0 +1,209 @@
+{
+  "color": {
+    "$type": "color",
+    "background": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.960784, 0.960784, 0.94902],
+        "hex": "#f5f5f2"
+      },
+      "$description": "The page, and the text set directly on it."
+    },
+    "foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.121569, 0.113725, 0.101961],
+        "hex": "#1f1d1a"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.980392, 0.980392, 0.972549],
+        "hex": "#fafaf8"
+      },
+      "$description": "An area raised slightly off the page: a section, a panel."
+    },
+    "surface-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.121569, 0.113725, 0.101961],
+        "hex": "#1f1d1a"
+      }
+    },
+    "card": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 1, 1],
+        "hex": "#ffffff"
+      },
+      "$description": "A card."
+    },
+    "card-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.121569, 0.113725, 0.101961],
+        "hex": "#1f1d1a"
+      }
+    },
+    "popover": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 1, 1],
+        "hex": "#ffffff"
+      },
+      "$description": "A floating layer: popover, menu, dialog, toast."
+    },
+    "popover-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.121569, 0.113725, 0.101961],
+        "hex": "#1f1d1a"
+      }
+    },
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.168627, 0.298039, 0.54902],
+        "hex": "#2b4c8c"
+      },
+      "$description": "Ai (indigo): the main action, links, and selected state."
+    },
+    "primary-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 1, 1],
+        "hex": "#ffffff"
+      }
+    },
+    "secondary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.776471, 0.239216, 0.090196],
+        "hex": "#c63d17"
+      },
+      "$description": "Shu (vermilion): the second brand color, used sparingly. Not a subdued secondary button; use muted or accent for that."
+    },
+    "secondary-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 1, 1],
+        "hex": "#ffffff"
+      }
+    },
+    "accent": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.890196, 0.913725, 0.960784],
+        "hex": "#e3e9f5"
+      },
+      "$description": "A quiet highlight: hover, the current item."
+    },
+    "accent-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.133333, 0.25098, 0.478431],
+        "hex": "#22407a"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.909804, 0.909804, 0.890196],
+        "hex": "#e8e8e3"
+      },
+      "$description": "A subdued fill. Its foreground doubles as secondary text on any light fill."
+    },
+    "muted-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.372549, 0.368627, 0.34902],
+        "hex": "#5f5e59"
+      }
+    },
+    "border": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.839216, 0.839216, 0.815686],
+        "hex": "#d6d6d0"
+      },
+      "$description": "Hairlines and dividers."
+    },
+    "input": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.811765, 0.811765, 0.784314],
+        "hex": "#cfcfc8"
+      },
+      "$description": "The edge of a form control."
+    },
+    "ring": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.168627, 0.298039, 0.54902],
+        "hex": "#2b4c8c"
+      },
+      "$description": "The focus indicator."
+    },
+    "success": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.164706, 0.419608, 0.247059],
+        "hex": "#2a6b3f"
+      },
+      "$description": "Success."
+    },
+    "success-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 1, 1],
+        "hex": "#ffffff"
+      }
+    },
+    "warning": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.541176, 0.352941, 0.043137],
+        "hex": "#8a5a0b"
+      },
+      "$description": "Warning."
+    },
+    "warning-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 1, 1],
+        "hex": "#ffffff"
+      }
+    },
+    "destructive": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.560784, 0.113725, 0.113725],
+        "hex": "#8f1d1d"
+      },
+      "$description": "Errors and actions that destroy data."
+    },
+    "destructive-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 1, 1],
+        "hex": "#ffffff"
+      }
+    },
+    "info": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.184314, 0.364706, 0.541176],
+        "hex": "#2f5d8a"
+      },
+      "$description": "Neutral information."
+    },
+    "info-foreground": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 1, 1],
+        "hex": "#ffffff"
+      }
+    }
+  }
+}

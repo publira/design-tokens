@@ -1,0 +1,5 @@
+@import "tailwindcss" source(none);
+@import "@publira/design-tokens/theme.css";
+
+@source inline("{bg,text}-{background,foreground,surface,surface-foreground,card,card-foreground,popover,popover-foreground,primary,primary-foreground,secondary,secondary-foreground,accent,accent-foreground,muted,muted-foreground,border,input,ring,success,success-foreground,warning,warning-foreground,destructive,destructive-foreground,info,info-foreground}");
+@source inline("font-sans font-serif font-mono rounded-md shadow-sm p-4 text-sm md:p-8");
