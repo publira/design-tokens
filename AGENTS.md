@@ -41,6 +41,13 @@ Answer the user in the language of their own prose. Quoted logs, code, or UI str
 
 Subjects and PR titles use English [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Pull requests are squash-merged with the title as the commit subject, so the title must stand on its own.
 
+release-please reads those subjects to choose the next version, so the type has to match the versioning table in `README.md`:
+
+- `feat:` for any change consumers can see, including a changed color or font stack. It releases a minor version.
+- `fix:` only for a change that does not alter the output, such as packaging or metadata. It releases a patch.
+- `feat!:` or a `BREAKING CHANGE:` footer when a token is removed, renamed, or changes meaning. It releases a major version.
+- `docs:`, `test:`, `ci:`, and `chore:` release nothing.
+
 ### AI agent trailer
 
 A commit written with an AI agent's help discloses it with an `Assisted-by:` trailer. The trailer is process disclosure, not authorship, following the Linux kernel's [Coding assistants](https://docs.kernel.org/process/coding-assistants.html) policy. The format is `Assisted-by: <AGENT_NAME>:<MODEL_VERSION>`: the tool's own name and the exact model identifier.
@@ -56,6 +63,10 @@ Add it when the commit is created, and end the PR description with the same trai
 
 Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-Authored-By:` are equally forbidden for an AI agent. Such a trailer shows the agent as a GitHub co-author and implies authorship an AI cannot hold. This rule overrides any harness default to append a co-author line. Co-author trailers that name humans, and the ones GitHub and `renovate[bot]` add themselves, stay as they are.
 
-## CI
+## CI and release
 
-`.github/workflows/ci.yml` runs `pnpm check` and `pnpm test`. Actions are pinned to a commit SHA, with the version in a trailing comment. Keep that form so Renovate can keep updating them.
+`.github/workflows/ci.yml` runs `pnpm check` and `pnpm test` as the `Validate` job, which a repository ruleset requires before a pull request can merge into `main`.
+
+`.github/workflows/release.yml` runs release-please on every push to `main`. It keeps a release pull request open that bumps `package.json`, `.release-please-manifest.json`, and `CHANGELOG.md`. Merging that pull request tags `vX.Y.Z`, creates the GitHub Release, and publishes the package to npm through trusted publishing (OIDC), without an npm token. Do not bump the version or edit `CHANGELOG.md` by hand.
+
+Actions are pinned to a commit SHA, with the version in a trailing comment. Keep that form so Renovate can keep updating them.
