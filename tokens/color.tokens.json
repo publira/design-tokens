@@ -132,10 +132,10 @@
     "input": {
       "$value": {
         "colorSpace": "srgb",
-        "components": [0.811765, 0.811765, 0.784314],
-        "hex": "#cfcfc8"
+        "components": [0.52549, 0.521569, 0.494118],
+        "hex": "#86857e"
       },
-      "$description": "The edge of a form control."
+      "$description": "The edge of a form control. At least 3:1 against every surface a control sits on."
     },
     "ring": {
       "$value": {

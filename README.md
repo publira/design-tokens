@@ -51,7 +51,7 @@ As with any Tailwind theme variable, a `--color-*` variable is only emitted when
 
 Defined in `tokens/color.tokens.json` as `$type: "color"` tokens in the sRGB color space, each with its `hex`.
 
-Each role that paints a fill comes with a `-foreground` for the text and icons on top of it. Every such pair has a contrast ratio of at least 4.5:1.
+Each role that paints a fill comes with a `-foreground` for the text and icons on top of it. Every such pair has a contrast ratio of at least 4.5:1, and `--color-input` reaches 3:1 against `background`, `surface`, `card`, and `popover`, as [WCAG 2.1 Non-text Contrast](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html) asks of a control's edge.
 
 | Token | Value | Use |
 | --- | --- | --- |
@@ -64,7 +64,7 @@ Each role that paints a fill comes with a `-foreground` for the text and icons o
 | `--color-accent` / `-foreground` | `#e3e9f5` / `#22407a` | A quiet highlight: hover, the current item |
 | `--color-muted` / `-foreground` | `#e8e8e3` / `#5f5e59` | A subdued fill; the foreground is also secondary text |
 | `--color-border` | `#d6d6d0` | Hairlines and dividers |
-| `--color-input` | `#cfcfc8` | The edge of a form control |
+| `--color-input` | `#86857e` | The edge of a form control |
 | `--color-ring` | `#2b4c8c` | The focus indicator |
 | `--color-success` / `-foreground` | `#2a6b3f` / `#ffffff` | Success |
 | `--color-warning` / `-foreground` | `#8a5a0b` / `#ffffff` | Warning |
