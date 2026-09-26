@@ -65,7 +65,7 @@ Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-A
 
 ## CI and release
 
-`.github/workflows/ci.yml` runs `pnpm check` and `pnpm test` as the `Validate` job, which a repository ruleset requires before a pull request can merge into `main`.
+`.github/workflows/ci.yml` runs `pnpm check` and `pnpm test` as the `Validate` job, which a repository ruleset requires before a pull request can merge into `main`. Pull requests merge through a merge queue, so `ci.yml` also runs on `merge_group` and reports `Validate` on the group the queue builds.
 
 `.github/workflows/release.yml` runs release-please on every push to `main`. It keeps a release pull request open that bumps `package.json`, `.release-please-manifest.json`, and `CHANGELOG.md`. Merging that pull request tags `vX.Y.Z`, creates the GitHub Release, and publishes the package to npm through trusted publishing (OIDC), without an npm token. Do not bump the version or edit `CHANGELOG.md` by hand.
 
