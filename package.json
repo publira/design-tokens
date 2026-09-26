@@ -39,8 +39,8 @@
     "eslint-plugin-github": "6.1.2",
     "eslint-plugin-sonarjs": "4.2.1",
     "lefthook": "2.1.14",
-    "oxfmt": "0.68.0",
-    "oxlint": "1.83.0",
+    "oxfmt": "0.70.0",
+    "oxlint": "1.85.0",
     "style-dictionary": "5.5.5",
     "tailwindcss": "4.3.3",
     "ultracite": "7.12.0"
