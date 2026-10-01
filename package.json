@@ -37,7 +37,7 @@
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
     "eslint-plugin-github": "6.1.2",
-    "eslint-plugin-sonarjs": "4.2.1",
+    "eslint-plugin-sonarjs": "4.2.2",
     "lefthook": "2.1.14",
     "oxfmt": "0.70.0",
     "oxlint": "1.85.0",
