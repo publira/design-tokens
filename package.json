@@ -43,7 +43,7 @@
     "oxlint": "1.86.0",
     "style-dictionary": "5.5.5",
     "tailwindcss": "4.3.3",
-    "ultracite": "7.12.1"
+    "ultracite": "7.12.2"
   },
   "peerDependencies": {
     "tailwindcss": "^4.0.0"
