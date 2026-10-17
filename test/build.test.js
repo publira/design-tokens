@@ -50,6 +50,7 @@ const build = (fixture) => {
     mkdtempSync(path.join(tmpdir(), "design-tokens-")),
     "out.css"
   );
+
   execFileSync(
     process.execPath,
     [
@@ -61,6 +62,7 @@ const build = (fixture) => {
     ],
     { stdio: "pipe" }
   );
+
   return readFileSync(output, "utf-8");
 };
 
@@ -107,15 +109,19 @@ test("the token files define only color and font groups", () => {
 test("every color token is a DTCG sRGB color whose hex matches its components", () => {
   const { color } = readTokens("color.tokens.json");
   assert.equal(color.$type, "color");
+
   const tokens = Object.entries(color).filter(
     ([name]) => !name.startsWith("$")
   );
+
   assert.deepEqual(
     tokens.map(([name]) => name),
     ROLES
   );
+
   for (const [name, { $value }] of tokens) {
     assert.equal($value.colorSpace, "srgb", name);
+
     const hex = `#${$value.components
       .map((c) =>
         Math.round(c * 255)
@@ -123,6 +129,7 @@ test("every color token is a DTCG sRGB color whose hex matches its components", 
           .padStart(2, "0")
       )
       .join("")}`;
+
     assert.equal(hex, $value.hex, name);
   }
 });
@@ -130,6 +137,7 @@ test("every color token is a DTCG sRGB color whose hex matches its components", 
 test("every font token is a DTCG font family stack", () => {
   const { font } = readTokens("font.tokens.json");
   assert.equal(font.$type, "fontFamily");
+
   for (const name of ["sans", "serif"]) {
     assert.ok(Array.isArray(font[name].$value), name);
   }
@@ -140,16 +148,19 @@ const luminance = (components) => {
   const [r, g, b] = components.map((c) =>
     c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4
   );
+
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 };
 
 const contrast = (a, b) => {
   const [dark, light] = [luminance(a), luminance(b)].toSorted((x, y) => x - y);
+
   return (light + 0.05) / (dark + 0.05);
 };
 
 test("every fill and its foreground reach 4.5:1", () => {
   const { color } = readTokens("color.tokens.json");
+
   for (const role of ROLES.filter((name) =>
     ROLES.includes(`${name}-foreground`)
   )) {
@@ -157,17 +168,20 @@ test("every fill and its foreground reach 4.5:1", () => {
       color[role].$value.components,
       color[`${role}-foreground`].$value.components
     );
+
     assert.ok(ratio >= 4.5, `${role}: ${ratio.toFixed(2)}:1`);
   }
 });
 
 test("the input edge reaches 3:1 against every surface a control sits on", () => {
   const { color } = readTokens("color.tokens.json");
+
   for (const surface of ["background", "surface", "card", "popover"]) {
     const ratio = contrast(
       color.input.$value.components,
       color[surface].$value.components
     );
+
     assert.ok(ratio >= 3, `${surface}: ${ratio.toFixed(2)}:1`);
   }
 });
