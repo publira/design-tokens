@@ -1,6 +1,6 @@
 {
   "name": "Publira Design Tokens",
-  "image": "ghcr.io/publira/base-images/publira-dev:2026.10.23@sha256:23d5eacd5577800416c2ef6d925a918df4a8092ca7df3c391c55be5911673447",
+  "image": "ghcr.io/publira/base-images/publira-dev:2026.10.24@sha256:5099cd710842472c04a2b088b51f1805c2b03401fd1d09888b3f6bf0a20a536b",
   "features": {
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0.5": {},
     "ghcr.io/devcontainers/features/github-cli:1.1.3": {}
