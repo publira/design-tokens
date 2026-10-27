@@ -188,8 +188,8 @@ importers:
         specifier: 1.89.0
         version: 1.89.0
       style-dictionary:
-        specifier: 5.7.0
-        version: 5.7.0
+        specifier: 5.7.1
+        version: 5.7.1
       tailwindcss:
         specifier: 4.3.3
         version: 4.3.3
@@ -2539,8 +2539,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  style-dictionary@5.7.0:
-    resolution: {integrity: sha512-imy4PuzqWTCpPE9YMcDSlqtb9zV4wj8I06hRDpt+/HTJVH88KKuMx0X++/PMDjQAGptSxqIkYiulOSwSL5r6Kw==}
+  style-dictionary@5.7.1:
+    resolution: {integrity: sha512-qO9WsyR5jZWz8+5JRtehn7HF8YAvm+Jd8UxiYHtvZhYSNwfMfAVOBK1anjdZwbH+njFb7xuQsjqpD+djPXErcw==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -4986,7 +4986,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  style-dictionary@5.7.0:
+  style-dictionary@5.7.1:
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.2
       '@bundled-es-modules/glob': 13.0.6
