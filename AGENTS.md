@@ -70,3 +70,7 @@ Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-A
 `.github/workflows/release.yml` runs release-please on every push to `main`. It keeps a release pull request open that bumps `package.json`, `.release-please-manifest.json`, and `CHANGELOG.md`. Merging that pull request tags `vX.Y.Z`, creates the GitHub Release, and publishes the package to npm through trusted publishing (OIDC), without an npm token. Do not bump the version or edit `CHANGELOG.md` by hand.
 
 Actions are pinned to a commit SHA, with the version in a trailing comment. Keep that form so Renovate can keep updating them.
+
+## Skill packages
+
+Entries in `.agents/skills/*` listed in `skills-lock.json` are vendored: `npx skills` overwrites them, and the maintenance bot in `publira/agents` runs `npx skills update -p -y` weekly and opens a pull request when there is a diff. Do not edit them; a patch is lost at the next update. Reading them for reference is fine. When this repository's policy and a skill disagree, this file wins. `.claude/skills/*` reaches the same skills through relative symlinks.
