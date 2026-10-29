@@ -1,12 +1,11 @@
 pre-commit:
   jobs:
-    - run: pnpm dlx ultracite fix
+    - name: fix
       glob:
-        - "**/*.js"
-        - "**/*.jsx"
-        - "**/*.ts"
-        - "**/*.tsx"
-        - "**/*.json"
-        - "**/*.jsonc"
-        - "**/*.css"
+        - "*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}"
+        - "*.{css,less,scss}"
+        - "*.{json,json5,jsonc}"
+        - "*.{md,mdx}"
+        - "*.{yaml,yml}"
+      run: pnpm fix {staged_files}
       stage_fixed: true

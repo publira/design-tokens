@@ -20,7 +20,7 @@ Repository-specific conventions for coding agents.
 - `pnpm check`: run the Ultracite lint and format checks.
 - `pnpm fix`: apply the Ultracite fixes.
 
-Run `pnpm check` and `pnpm test` before committing. The lefthook pre-commit hook runs `ultracite fix` on staged files, but it does not run the tests.
+Run `pnpm check` and `pnpm test` before committing. The lefthook pre-commit hook runs `pnpm fix` on the staged files, but it does not run the tests.
 
 ## Token rules
 
