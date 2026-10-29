@@ -37,31 +37,14 @@ Everything in the repository is **English**: `README.md`, this guide, code comme
 
 Answer the user in the language of their own prose. Quoted logs, code, or UI strings do not decide it. Answer in English when no user prose settles it, such as in a scheduled or CI-started run.
 
-## Git commits and pull requests
+## Commit types and releases
 
-Subjects and PR titles use English [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Pull requests are squash-merged with the title as the commit subject, so the title must stand on its own.
-
-release-please reads those subjects to choose the next version, so the type has to match the versioning table in `README.md`:
+release-please reads the Conventional Commits type of each commit subject to choose the next version, so the type has to match the versioning table in `README.md`:
 
 - `feat:` for any change consumers can see, including a changed color or font stack. It releases a minor version.
 - `fix:` only for a change that does not alter the output, such as packaging or metadata. It releases a patch.
 - `feat!:` or a `BREAKING CHANGE:` footer when a token is removed, renamed, or changes meaning. It releases a major version.
 - `docs:`, `test:`, `ci:`, and `chore:` release nothing.
-
-### AI agent trailer
-
-A commit written with an AI agent's help discloses it with an `Assisted-by:` trailer. The trailer is process disclosure, not authorship, following the Linux kernel's [Coding assistants](https://docs.kernel.org/process/coding-assistants.html) policy. The format is `Assisted-by: <AGENT_NAME>:<MODEL_VERSION>`: the tool's own name and the exact model identifier.
-
-```bash
-git commit -m "feat: add the info color token" \
-  --trailer "Assisted-by: Claude Code:claude-opus-5"
-```
-
-Add it when the commit is created, and end the PR description with the same trailer, since that description becomes the merge commit body.
-
-### Never name an agent as a co-author
-
-Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-Authored-By:` are equally forbidden for an AI agent. Such a trailer shows the agent as a GitHub co-author and implies authorship an AI cannot hold. This rule overrides any harness default to append a co-author line. Co-author trailers that name humans, and the ones GitHub and `renovate[bot]` add themselves, stay as they are.
 
 ## CI and release
 
