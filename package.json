@@ -35,14 +35,14 @@
     "test": "pnpm run build && node --test"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "4.3.4",
+    "@tailwindcss/cli": "4.3.5",
     "eslint-plugin-github": "6.1.2",
     "eslint-plugin-sonarjs": "4.2.2",
     "lefthook": "2.2.2",
     "oxfmt": "0.77.0",
     "oxlint": "1.92.0",
     "style-dictionary": "5.8.0",
-    "tailwindcss": "4.3.4",
+    "tailwindcss": "4.3.5",
     "ultracite": "8.1.1"
   },
   "peerDependencies": {
